@@ -1,0 +1,45 @@
+
+<!-- <div class="d-flex justify-content-center">
+  <select class="form-select" aria-label="Default select example" [(ngModel)]="SelectedId"  >
+    <option selected value="0">Open this select menu</option>
+    <option *ngFor="let item of AllCategoryList" [value]="item.id">
+        {{item.name}}
+    </option>
+    <br>
+  </select> 
+</div> -->
+<br>
+<h2 class="text-center">Products</h2>
+
+
+<div class="container " >
+    <div class="row row-cols-4 p-4 m-2 justify-content-center">
+      <ng-container *ngFor="let item of AllProductList ">
+      <div class="col p-2 m-3 border cardstyle" appShadow style="width:310px;" *ngIf="item.quantity!=0 ">
+       <a (click)="OpenProductDetails(item.id)" class="btn">
+        <img src="http://localhost:34300/Resources/Images/{{item.image}}" class="card-img-top CardImag pe-auto" alt="..."  >
+       </a>
+       
+        <div class="card-body">
+          <h3 class="card-title text-center">{{item.name}}</h3>
+          <p class="card-text">
+            <span class="p-2">Quantity : {{item.quantity}}</span><br> 
+            <span class="p-2">Price: {{item.price|currency: 'EGP'}}</span> 
+          </p>
+         
+        </div>
+        <div class="card-footer bg-dark CardFooter d-flex justify-content-start ">
+
+              <button class="btn btn-warning rounded-circle " role="button">
+                <i class="fa fa-shopping-cart text-light " aria-hidden="true"></i>
+              </button>
+            
+                <span class="ms-1 me-1"><i class="fa fa-minus-circle text-light" aria-hidden="true"></i></span>
+                <input type="number" class="rounded-pill text-center ms-1 me-1" style="height:40px; width:55px">
+                <span class="ms-1 me-1"><i class="fa fa-plus-circle text-light  " aria-hidden="true"></i></span>
+         
+        </div>
+      </div>
+    </ng-container>
+    </div>
+  </div>

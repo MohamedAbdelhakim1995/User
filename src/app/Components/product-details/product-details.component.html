@@ -1,0 +1,20 @@
+<div class="container ">
+    <div class="row row-cols-4 p-4  m-4  " >
+      <div class="col p-2  text" style="width: 280px;"  >
+        <img  src="http://localhost:34300/Resources/Images/{{currProduct.image}}" class="card-img-top" alt="..." >
+        <div class="card-body">
+          <h3 class="card-title text-center">{{currProduct.name}}</h3>
+          <p class="card-text">
+            <span class="p-2">Quantity : {{currProduct.quantity}}</span><br> 
+            <span class="p-2">Price: {{currProduct.price| currency: 'EGP'}}</span> 
+          </p>
+         
+        </div>
+      </div>
+  
+    </div>
+  </div>
+  <button mat-raised-button (click)="close()">Close</button>
+  <!-- <mat-dialog-actions>
+    <button class="mat-raised-button" color="primary" (click)="close()">Close</button>
+</mat-dialog-actions> -->

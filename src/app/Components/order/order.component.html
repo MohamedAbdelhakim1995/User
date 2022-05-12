@@ -1,0 +1,14 @@
+<div class="d-flex justify-content-center">
+    <select class="form-select" aria-label="Default select example" [(ngModel)]="SelectedId"  >
+      <option selected value="0" default>Open this select menu</option>
+      <option *ngFor="let item of AllCategoryList" [value]="item.id">
+          {{item.name}}
+      </option>
+      <br>
+    </select> 
+  </div>
+  <br>
+<app-product [SelCatID]="SelectedId">
+
+</app-product >
+
